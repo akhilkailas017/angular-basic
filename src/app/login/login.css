@@ -1,0 +1,34 @@
+.object-fit-cover {
+  object-fit: cover;
+}
+
+.login-box {
+  max-width: 420px;
+}
+
+.form-control {
+  border-radius: 8px;
+}
+
+.btn-primary {
+  background-color: #0d5ef7;
+  border: none;
+  border-radius: 10px;
+}
+
+.btn-primary:hover {
+  background-color: #0b4fd1;
+}
+
+.show-password {
+  position: absolute;
+  right: 15px;
+  top: 42px;
+  font-size: 14px;
+  color: #0d5ef7;
+  cursor: pointer;
+}
+
+h3 {
+  font-size: 28px;
+}
