@@ -31,6 +31,9 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/angular-basic/",
+              "deployUrl": "/angular-basic/",
+              "outputPath": "dist/angular-basic",
               "budgets": [
                 {
                   "type": "initial",
