@@ -1,9 +1,12 @@
-name: Deploy Angular to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: "Reason for manual deployment (optional)"
+        required: false
+        default: "Manual deploy to GitHub Pages"
 
 jobs:
   deploy:
@@ -23,8 +26,7 @@ jobs:
         run: npm ci
 
       - name: Build Angular app
-        run: |
-          npm run build -- --base-href /angular-basic/
+        run: npm run build -- --base-href /angular-basic/
 
       - name: Configure Git identity
         run: |
