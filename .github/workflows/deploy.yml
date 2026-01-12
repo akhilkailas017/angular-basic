@@ -9,6 +9,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -24,7 +27,7 @@ jobs:
 
       - name: Build Angular app
         run: |
-          npm run build -- --base-href /angular-basic/
+          npx ng build ui --base-href /angular-basic/
 
       - name: Configure Git identity
         run: |
@@ -36,5 +39,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npx gh-pages \
-            -d dist/ui \
+            -d dist/ui/browser \
             -r https://x-access-token:${GITHUB_TOKEN}@github.com/akhilkailas017/angular-basic.git
